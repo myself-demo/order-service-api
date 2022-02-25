@@ -1,0 +1,11 @@
+syntax = "proto3";
+package order;
+option go_package = "github.com/myself-demo/order-service-api/pb;pb";
+
+import "model.proto";
+import "google/protobuf/wrappers.proto";
+
+service OrderService{
+  rpc QueryByID(google.protobuf.StringValue) returns (Order){};
+}
+
