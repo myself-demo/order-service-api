@@ -2,9 +2,12 @@ syntax = "proto3";
 package order;
 option go_package = "github.com/myself-demo/order-service-api/pb;pb";
 
+import "google/protobuf/timestamp.proto";
+
 message Order{
-  string OrderID = 1;
-  string UserID = 2;
-  string ProductName = 3;
-  double PayMoney = 4;
+  string orderId = 1;
+  string userId = 2;
+  string productName = 3;
+  double payMoney = 4;
+  google.protobuf.Timestamp orderTime = 5;
 }

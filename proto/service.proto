@@ -4,8 +4,21 @@ option go_package = "github.com/myself-demo/order-service-api/pb;pb";
 
 import "model.proto";
 import "google/protobuf/wrappers.proto";
+import "common.proto";
+
+
+message QueryByIdResult{
+  common.HandleResult handleResult = 1;
+  optional Order order = 2;
+}
+
+message ToOrderResult{
+  common.HandleResult handleResult = 1;
+  optional string orderId = 2;
+}
 
 service OrderService{
-  rpc QueryByID(google.protobuf.StringValue) returns (Order){};
+  rpc queryById(google.protobuf.StringValue) returns (QueryByIdResult){};
+  rpc toOrder(Order)returns(ToOrderResult){};
 }
 
