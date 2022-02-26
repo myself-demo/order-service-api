@@ -14,7 +14,7 @@ message QueryByIdResult{
 
 message ToOrderResult{
   common.HandleResult handleResult = 1;
-  optional string orderId = 2;
+  string orderId = 2;
 }
 
 service OrderService{
